@@ -1,118 +1,121 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Devide from "@/components/devide";
+import Patrol from "@/components/patrol";
+import Person from "@/components/person";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  let route = [
+    { number: 0, point: "순찰시작" },
+    { number: 1, point: "109동 노인정" },
+    { number: 2, point: "109동" },
+    { number: 3, point: "202B B1 1" },
+    { number: 4, point: "202B B1 2" },
+    { number: 5, point: "202B B2" },
+    { number: 6, point: "202B B3" },
+    { number: 7, point: "202A B3" },
+    { number: 8, point: "202A B2" },
+    { number: 9, point: "202A B1 1" },
+    { number: 10, point: "202A B1 2" },
+    { number: 11, point: "101동" },
+    { number: 12, point: "101동 노인정" },
+    { number: 13, point: "102동" },
+    { number: 14, point: "103동" },
+    { number: 15, point: "103동 샛길" },
+    { number: 16, point: "105동" },
+    { number: 17, point: "106동" },
+    { number: 18, point: "203 B1" },
+    { number: 19, point: "203 B2" },
+    { number: 20, point: "203 B3" },
+    { number: 21, point: "204B B1 1" },
+    { number: 22, point: "108동" },
+    { number: 23, point: "107동" },
+    { number: 24, point: "204B B1 2" },
+    { number: 25, point: "204B B2" },
+    { number: 26, point: "204B B3" },
+    { number: 27, point: "204A B3" },
+    { number: 28, point: "204A B2" },
+    { number: 29, point: "204A B1 1" },
+    { number: 30, point: "204A B1 2" },
+    { number: 31, point: "111동 필로티" },
+    { number: 32, point: "111동" },
+    { number: 33, point: "111동 정자" },
+    { number: 34, point: "ATM" },
+    { number: 35, point: "110B동" },
+    { number: 36, point: "110A동" },
+    { number: 37, point: "상황실 대기" },
+    { number: 38, point: "101동 출동" },
+    { number: 39, point: "102동 출동" },
+    { number: 40, point: "103동 출동" },
+    { number: 41, point: "105동 출동" },
+    { number: 42, point: "106동 출동" },
+    { number: 43, point: "107동 출동" },
+    { number: 44, point: "108동 출동" },
+    { number: 45, point: "109동 출동" },
+    { number: 46, point: "110A동 출동" },
+    { number: 47, point: "110B동 출동" },
+    { number: 48, point: "111동 출동" },
+  ];
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = (now.getMonth() + 1).toString().padStart(2, "0");
+  const day = now.getDate().toString().padStart(2, "0");
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="tracking-widest">
+      <div className="font-sans flex flex-col items-center">
+        <div className="flex justify-center space-x-16 mb-3">
+          <span className="text-2xl">순찰자별&ensp;보고서</span>
+          <div className="flex">
+            <div className="flex flex-col items-center border-2 border-black ">
+              <div className="px-5 text-base border-b-2 border-black">
+                조&emsp;장
+              </div>
+              <div className="h-20 w-full" />
+            </div>
+            <div className="flex flex-col items-center border-2 border-black border-l-0">
+              <div className="px-5 text-base border-b-2 border-black">
+                팀&emsp;장
+              </div>
+              <div className="h-20 w-full" />
+            </div>
+            <div className="flex flex-col items-center border-2 border-black border-l-0">
+              <div className="px-3 text-base border-b-2 border-black">
+                관리소장
+              </div>
+              <div className="h-20 w-full" />
+            </div>
+          </div>
+        </div>
+        <div className="flex w-full space-x-20 p-2 border-b border-black tracking-wider">
+          <span className="text-base">
+            작성일 : {`${year}-${month}-${day}`}
+          </span>
+          <span className="text-base">
+            출력기간 : {`${year}-${month}-${day}`} 09:00 ~{" "}
+            {`${year}-${month}-${day}`} 09:00
+          </span>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex border-b border-black mb-2">
+        <div className="flex flex-col w-1/2">
+          <Person />
+          <Devide />
+          <div className="flex flex-col p-2 space-y-0.5 text-xs">
+            <Patrol point={38} cut={route} time={9} />
+            <Patrol point={2} cut={route} time={14} />
+          </div>
+        </div>
+        <div className="flex flex-col w-1/2">
+          <div className="flex flex-col p-2 space-y-0.5 text-xs">
+            <Patrol point={36} cut={route.slice(2, route.length)} time={14} />
+            <Patrol point={8} cut={route} time={17} />
+          </div>
+          {/* <div className="w-2/3 pb-2 text-sm border-b border-black">
+            * 순찰지점수 : &emsp;&emsp;&emsp;&emsp;114 개소
+          </div> */}
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <div className="text-sm text-center">Page 1</div>
+    </div>
+  );
 }
