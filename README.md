@@ -1,38 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 사용방법
 
-## Getting Started
+### (사이트 배포 복잡해서 못하겠으니 그냥 이렇게 사용합시다)
 
-First, run the development server:
+## 1. 이 폴더 자체를 VS Code로 엽니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## 2. 하단에 무슨 이상한 작은 창이 안 떠 있으면 Ctrl + Shift + ~ 을 누릅니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 3. npm run dev 를 칩니다.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 4. http://localhost:3000 보이시죠?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 5. Ctrl + 마우스 좌클릭 ㄱㄱ
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 6. 창이 뜹니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 7. 알려준 대로 이름넣는 칸에 근무자 이름 넣어 가면서 한장씩 인쇄하면서 가라를 즐깁시다.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 즐거운 캡스되세요~
