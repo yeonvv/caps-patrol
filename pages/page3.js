@@ -21,20 +21,19 @@ export default function Page2() {
             <Total />
           </div>
           <Person />
-          <Devide />
           <div className="flex flex-col p-2 space-y-0.5 text-xs">
-            <Patrol point={16} cut={route} time={10} />
+            <Patrol point={17} cut={route} time={10} />
           </div>
         </div>
         <div className="flex flex-col w-1/2">
           <div className="flex flex-col p-2 pb-0 space-y-0.5 text-xs">
             <Patrol
-              point={20}
-              cut={route.slice(18, route.length)}
+              point={21}
+              cut={route.slice(17, route.length)}
               time={10}
               minute={20}
             />
-            <Patrol point={32} cut={route} time={15} />
+            <Patrol point={31} cut={route} time={15} />
           </div>
         </div>
       </div>
