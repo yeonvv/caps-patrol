@@ -13,33 +13,29 @@ export default function Page2() {
         <div className="flex flex-col w-1/2">
           <div className="flex flex-col px-2 space-y-0.5 text-xs">
             <Patrol
-              point={5}
-              cut={route.slice(33, route.length)}
-              time={15}
-              minute={36}
+              point={31}
+              cut={route.slice(7, route.length)}
+              time={3}
+              minute={11}
+              tomorrow
             />
-            <Patrol point={38} cut={route} time={18} />
-            <Total total={114} />
-          </div>
-          <Person />
-          <Devide />
-          <div className="flex flex-col px-2 space-y-0.5 text-xs">
-            <Patrol point={4} cut={route} time={13} />
+            <Patrol point={22} cut={route} time={6} />
           </div>
         </div>
         <div className="flex flex-col w-1/2">
           <div className="flex flex-col px-2 pb-0 space-y-0.5 text-xs">
             <Patrol
-              point={34}
-              cut={route.slice(4, route.length)}
-              time={13}
-              minute={7}
+              point={16}
+              cut={route.slice(22, route.length)}
+              time={6}
+              minute={26}
+              tomorrow
             />
-            <Patrol point={19} cut={route} time={16} />
+            <Total total={152} />
           </div>
         </div>
       </div>
-      <NextPage prevPage={"/page2"} currPage={3} nextPage={"/page4"} />
+      <NextPage prevPage={"/page7"} currPage={8} nextPage={"/page8"} />
     </div>
   );
 }

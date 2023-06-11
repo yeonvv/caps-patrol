@@ -51,24 +51,24 @@ export default function Home() {
         <div className="flex flex-col w-1/2">
           <Person />
           <Devide />
-          <div className="flex flex-col p-2 space-y-0.5 text-xs">
+          <div className="flex flex-col px-2 space-y-0.5 text-xs">
             <Patrol point={38} cut={route} time={9} />
-            <Patrol point={2} cut={route} time={14} />
+            <Patrol point={3} cut={route} time={14} />
           </div>
         </div>
         <div className="flex flex-col w-1/2">
-          <div className="flex flex-col p-2 pb-0 space-y-0.5 text-xs">
+          <div className="flex flex-col px-2 pb-0 space-y-0.5 text-xs">
             <Patrol
-              point={36}
-              cut={route.slice(2, route.length)}
+              point={35}
+              cut={route.slice(3, route.length)}
               time={14}
-              minute={5}
+              minute={6}
             />
-            <Patrol point={8} cut={route} time={17} />
+            <Patrol point={9} cut={route} time={17} />
           </div>
         </div>
       </div>
-      <NextPage currPage={1} nextPage={"/page2"} />
+      <NextPage prevPage={"/"} currPage={1} nextPage={"/page2"} />
     </div>
   );
 }

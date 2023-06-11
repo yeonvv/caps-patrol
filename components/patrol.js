@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Patrol({ point, cut, time, minute }) {
+export default function Patrol({ point, cut, time, minute, tomorrow }) {
   const now = new Date();
   const year = now.getFullYear();
   const month = (now.getMonth() + 1).toString().padStart(2, "0");
@@ -55,8 +55,9 @@ export default function Patrol({ point, cut, time, minute }) {
     if (v < point) {
       return (
         <span key={x.number}>
-          {`${month}-${day}`} {time.toString().padStart(2, "0")}:{min[v + 1]}:
-          {second[v]} &emsp;그랜드순찰&emsp;&emsp;&nbsp;
+          {`${month}-${tomorrow ? Number(day) + 1 : day}`}{" "}
+          {time.toString().padStart(2, "0")}:{min[v + 1]}:{second[v]}{" "}
+          &emsp;그랜드순찰&emsp;&emsp;&nbsp;
           {x.point}
         </span>
       );
